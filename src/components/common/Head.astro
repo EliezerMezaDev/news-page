@@ -1,0 +1,21 @@
+---
+interface Props {
+  title?: string;
+  keywords?: string[];
+  favicon?: string;
+}
+
+const {
+  title = "News",
+  keywords = ["Newspaper", "Web portal"],
+  favicon = "/favicon.svg",
+} = Astro.props;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="keywords" content={keywords.join(",")} />
+  <link rel="icon" href={favicon} type="image/x-icon" />
+</head>
