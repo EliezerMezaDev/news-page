@@ -1,7 +1,7 @@
 import { urlFormat } from "./functions";
 
 export async function getTopHeadlines(): Promise<any[]> {
-  const url = urlFormat(`top-headlines?country=us`);
+  const url = urlFormat(`top-headlines?country=us&pageSize=5`);
 
   const response = await fetch(url);
   const data: any = await response.json();

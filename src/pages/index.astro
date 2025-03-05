@@ -3,9 +3,9 @@ import "../styles/global.css";
 
 import Layout from "../layouts/Layout.astro";
 
-import { getTopHeadlines } from "../utils/api";
-
-const top = await getTopHeadlines();
+import TopHeadlines from "@components/home/TopHeadlines.astro";
 ---
 
-<Layout title="News | Inicio"> asd </Layout>
+<Layout title="News | Inicio">
+  <TopHeadlines />
+</Layout>
