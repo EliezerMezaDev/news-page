@@ -25,3 +25,8 @@
   --color-base-900: #1b1b1bff;
   --color-base-950: #141414ff;
 }
+
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}

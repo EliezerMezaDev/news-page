@@ -12,8 +12,12 @@ const subArt3 = topHeadlines[3];
 ---
 
 <Section>
-  <div class="h-[550px] grid grid-cols-5 grid-rows-3 gap-4">
-    <article class="col-span-3 row-span-3 overflow-hidden">
+  <div
+    class="min-h-[450px] xl:h-[550px] grid grid-cols-6 xl:grid-cols-5 grid-rows-3 gap-4"
+  >
+    <article
+      class="col-span-full md:col-span-4 xl:col-span-3 row-span-2 md:row-span-3 overflow-hidden"
+    >
       <div
         class="w-full h-[85%] bg-cover bg-center transition-all rounded-2xl"
         style={`background-image: url("${mainArt.urlToImage}")`}
@@ -24,7 +28,7 @@ const subArt3 = topHeadlines[3];
       <div class="h-[15%] flex items-center">
         <a href={mainArt.url} target="_blank">
           <h1
-            class="text-2xl font-bold leading-none text-base-800 hover:text-main-950 transition-colors"
+            class="text-xl lg:text-2xl lg:font-bold leading-none text-base-800 hover:text-main-950 transition-colors"
           >
             {mainArt.title}
           </h1>
@@ -32,66 +36,78 @@ const subArt3 = topHeadlines[3];
       </div>
     </article>
 
-    <article class="col-span-2 overflow-hidden grid grid-cols-[1fr_2fr]">
+    <article
+      class="col-span-2 overflow-hidden grid grid-cols-1 md:grid-cols-[1fr_2fr]"
+    >
       <div
-        class="bg-cover bg-center transition-all rounded-2xl"
+        class="max-md:mb-2 min-h-[100px] bg-cover bg-center transition-all rounded-2xl"
         style={`background-image: url("${subArt1.urlToImage}")`}
       >
         <span class="sr-only">{subArt1.title}</span>
       </div>
 
-      <div class="pl-2">
+      <div class="md:pl-2">
         <a href="#">
           <h2
-            class="mb-1 text-lg leading-none font-bold text-base-800 hover:text-main-950 transition-colors"
+            class="mb-1 text-sm lg:text-lg leading-none lg:font-bold text-base-800 hover:text-main-950 transition-colors"
           >
             {subArt1.title}
           </h2>
         </a>
 
-        <p class="text-base-800 text-md leading-none">{subArt1.description}</p>
+        <p class="max-lg:hidden text-base-800 text-sm leading-none">
+          {subArt1.description}
+        </p>
       </div>
     </article>
 
-    <article class="col-span-2 overflow-hidden grid grid-cols-[1fr_2fr]">
+    <article
+      class="col-span-2 overflow-hidden grid grid-cols-1 md:grid-cols-[1fr_2fr]"
+    >
       <div
-        class="bg-cover bg-center transition-all rounded-2xl"
+        class="max-md:mb-2 min-h-[100px] bg-cover bg-center transition-all rounded-2xl"
         style={`background-image: url("${subArt2.urlToImage}")`}
       >
         <span class="sr-only">{subArt2.title}</span>
       </div>
 
-      <div class="pl-2">
+      <div class="md:pl-2">
         <a href="#">
           <h2
-            class="mb-1 text-lg leading-none font-bold text-base-800 hover:text-main-950 transition-colors"
+            class="mb-1 text-sm lg:text-lg leading-none lg:font-bold text-base-800 hover:text-main-950 transition-colors"
           >
             {subArt2.title}
           </h2>
         </a>
 
-        <p class="text-base-800 text-md leading-none">{subArt2.description}</p>
+        <p class="max-lg:hidden text-base-800 text-sm leading-none">
+          {subArt2.description}
+        </p>
       </div>
     </article>
 
-    <article class="col-span-2 overflow-hidden grid grid-cols-[1fr_2fr]">
+    <article
+      class="col-span-2 overflow-hidden grid grid-cols-1 md:grid-cols-[1fr_2fr]"
+    >
       <div
-        class="bg-cover bg-center transition-all rounded-2xl"
+        class="max-md:mb-2 min-h-[100px] bg-cover bg-center transition-all rounded-2xl"
         style={`background-image: url("${subArt3.urlToImage}")`}
       >
         <span class="sr-only">{subArt3.title}</span>
       </div>
 
-      <div class="pl-2">
+      <div class="md:pl-2">
         <a href="#">
           <h2
-            class="mb-1 text-lg leading-none font-bold text-base-800 hover:text-main-950 transition-colors"
+            class="mb-1 text-sm lg:text-lg leading-none lg:font-bold text-base-800 hover:text-main-950 transition-colors"
           >
             {subArt3.title}
           </h2>
         </a>
 
-        <p class="text-base-800 text-md leading-none">{subArt3.description}</p>
+        <p class="max-lg:hidden text-base-800 text-sm leading-none">
+          {subArt3.description}
+        </p>
       </div>
     </article>
   </div>

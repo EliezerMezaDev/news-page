@@ -1,0 +1,65 @@
+---
+import Section from "@components/common/Section.astro";
+import { getArticlesByCategory } from "@utils/api";
+
+interface Props {
+  category: NEWS.CATEGORY;
+  size: number;
+}
+
+const { category, size } = Astro.props;
+
+const artcicles: NEWS.ARTICLE[] = await getArticlesByCategory(category, size);
+---
+
+<Section>
+  <div class="mb-4 flex justify-between items-center">
+    <h2 class="text-xl lg:text-2xl lg:font-bold leading-none uppercase">
+      {category}
+    </h2>
+
+    <a
+      href="#"
+      class="text-lg text-main-400 hover:text-main-500 transition-colors flex items-center gap-2"
+      >See more
+
+      <svg
+        class="size-6"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+          d="M5 12l14 0"></path><path d="M13 18l6 -6"></path><path d="M13 6l6 6"
+        ></path></svg
+      >
+    </a>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {
+      artcicles.map((art) => (
+        <article class="overflow-hidden flex flex-col gap-2">
+          <div
+            class="min-h-[150px] lg:min-h-[250px] bg-cover bg-center transition-all rounded-2xl"
+            style={`background-image: url("${art.urlToImage}")`}
+          >
+            <span class="sr-only">{art.title}</span>
+          </div>
+
+          <a href={art.url}>
+            <h3 class="text-sm md:text-lg leading-none md:font-bold text-base-800 hover:text-main-950 transition-colors">
+              {art.title}
+            </h3>
+          </a>
+
+          <p class="max-md:hidden text-base-800 text-sm leading-none">
+            {art.description}
+          </p>
+        </article>
+      ))
+    }
+  </div>
+</Section>

@@ -13,6 +13,24 @@ export async function getTopHeadlines(): Promise<any[]> {
   }
 }
 
+export async function getArticlesByCategory(
+  _category: NEWS.CATEGORY,
+  _size: number,
+): Promise<any[]> {
+  const url = urlFormat(
+    `top-headlines?country=us&category=${_category}&pageSize=${_size}`,
+  );
+
+  const response = await fetch(url);
+  const data: any = await response.json();
+
+  if (data.status === "ok") {
+    return data.articles;
+  } else {
+    throw new Error("Error al obtener noticias");
+  }
+}
+
 /*
 
 {
